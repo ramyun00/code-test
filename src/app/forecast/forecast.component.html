@@ -1,0 +1,34 @@
+<div class="weather">
+  <ul class="forecast">
+    <li class="day now">
+      <div class="icon">
+        <i class="wi" [ngClass]="getIcon(weather.condition.code)"></i>
+      </div>
+      <div class="temp">{{weather.condition.temp}}
+        <i class="wi wi-degrees"></i>
+      </div>
+      <div class="name">Now</div>
+      <div class="text">{{ weather.condition.text }}</div>
+    </li>
+
+    <li class="day future" *ngFor="let forecast of weather.forecast | slice:0:4">
+      <div class="icon">
+        <i class="wi" [ngClass]="getIcon(forecast.code)"></i>
+      </div>
+      <div class="temp">
+        <span class="high">
+          <span>{{forecast.high}}</span>
+          <i class="wi wi-degrees"></i>
+        </span>
+        <span class="low">
+          <span>{{forecast.low}}</span>
+          <i class="wi wi-degrees"></i>
+        </span>
+      </div>
+      <div class="name">{{forecast.day}}</div>
+      <div class="text">{{forecast.text}}</div>
+    </li>
+  </ul>
+
+  <div class="city">{{ location.city }}, {{ location.region }}</div>
+</div>

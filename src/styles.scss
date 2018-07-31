@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+/* color definitions */
+$mojo: rgb(195, 77, 64);
+$governor-bay: rgb(66, 66, 186);
+$bluewood: rgb(46, 60, 86);
+$fire-bush: rgb(229, 156, 47);
+$burnt-sienna: rgb(234, 114, 76);
+$wine-berry: rgb(92, 37, 51);
+$tom-thumb: rgb(45, 68, 47);
+$thunder: rgb(65, 47, 63);
+$vista: rgb(141, 211, 151);
+
+/* breakpoints */
+$tiny: 25em;
+$small: 42em;
+$medium: 75em;
+$large: 90em;
+$xlarge: 120em;
+@import 'node_modules/weather-icons/css/weather-icons.min.css';
+
+/* global css */
+html {
+  height: 100%;
+}
+
+*:focus {outline: none;}
+
+*,::after,::before {
+    box-sizing: inherit
+}
+
+li {list-style-type: none;}
+
+html {
+  font-size: 100%;
+  height: 100%
+}
+
+body {
+  background: $mojo;
+  box-sizing: border-box;
+  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', 'Open-Light', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  min-height: 100vh;
+  position: relative;
+  transition: background-color .6s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.mojo {background: $mojo;}
+  &.governor-bay {background: $governor-bay;}
+  &.bluewood {background: $bluewood;}
+  &.fire-bush {background: $fire-bush;}
+  &.burnt-sienna {background: $burnt-sienna;}
+  &.wine-berry {background: $wine-berry;}
+  &.tom-thumb {background: $tom-thumb;}
+  &.thunder {background: $thunder;}
+  &.vista {background: $vista;}
+}

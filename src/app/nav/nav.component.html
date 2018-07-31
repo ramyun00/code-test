@@ -1,0 +1,28 @@
+<div class="menu" [ngClass]="{'open': showMenu}">
+  <div class="tab" (click)="showMenu = !showMenu">
+    <img src="assets/hamburger.svg" class="open" alt="Menu">
+    <img src="assets/close.svg" class="close" alt="Close Menu">
+  </div>
+
+  <h2>Select a City</h2>
+  <form name="cityForm" (ngSubmit)="onSubmit($event)">
+    <input type="text" [formControl]="name" [ngClass]="theme" required>
+    <div [ngClass]="{'showError': name.errors}" class="error">
+      We can't find weather for you if you don't give us a city to lookup.
+    </div>
+  </form>
+
+  <h2>Theme</h2>
+  <ul class="theme">
+    <li class="color mojo" (click)="updateColor('mojo')">&nbsp;</li>
+    <li class="color governor-bay" (click)="updateColor('governor-bay')"></li>
+    <li class="color bluewood" (click)="updateColor('bluewood')"></li>
+    <li class="color fire-bush" (click)="updateColor('fire-bush')"></li>
+    <li class="color thunder" (click)="updateColor('thunder')"></li>
+    <li class="color burnt-sienna" (click)="updateColor('burnt-sienna')"></li>
+    <li class="color wine-berry" (click)="updateColor('wine-berry')"></li>
+    <li class="color tom-thumb" (click)="updateColor('tom-thumb')"></li>
+    <li class="color vista" (click)="updateColor('vista')"></li>
+  </ul>
+
+</div>
